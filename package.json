@@ -1,29 +1,19 @@
 {
-  "name": "uas-v2-discord-web3-deploy",
+  "name": "uglyapesquad-bot",
   "version": "2.0.0",
   "private": true,
   "type": "module",
-  "description": "UAS v2 Discord bot, Web3 holder verification, marketplace aggregation, and production dashboard.",
-  "workspaces": [
-    "bot",
-    "dashboard"
-  ],
+  "main": "src/index.js",
   "scripts": {
-    "build:dashboard": "npm --prefix dashboard run build",
-    "verify": "npm --prefix bot run verify && npm --prefix dashboard run verify",
-    "start:bot": "npm --prefix bot start",
-    "start:dashboard": "npm --prefix dashboard start",
-    "dev:dashboard": "npm --prefix dashboard run dev",
-    "register:commands": "npm --prefix bot run register",
-    "deploy-commands": "npm --prefix bot run register"
+    "start": "node src/index.js",
+    "deploy-commands": "node bot/src/deploy-commands.js",
+    "register": "node bot/src/deploy-commands.js"
   },
   "engines": {
     "node": ">=20.11"
   },
-  "overrides": {
-    "postcss": "^8.5.14"
-  },
-  "devDependencies": {
-    "postcss": "^8.5.14"
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.7"
   }
 }
