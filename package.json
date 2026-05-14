@@ -1,0 +1,14 @@
+{
+  "name": "uglyapesquad-bot-root",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "cd bot && npm install",
+    "start": "cd bot && npm start",
+    "deploy-commands": "cd bot && npm run deploy-commands"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
