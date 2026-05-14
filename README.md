@@ -1,70 +1,42 @@
-# Ugly Ape Squad v2 Package
+# UAS v2 Discord and Web3 Deployment
 
-This repo-ready package contains two deployable apps:
+Production-ready workspace for the Ultimate Ape Society v2 Discord bot, holder verification, marketplace aggregation, and dashboard.
 
-- `bot/` — Discord Web3 utility bot
-- `dashboard/` — Next.js dashboard starter
+## Services
 
-## Features
+- `bot` - Discord slash-command worker with `/verify`, `/refresh-role`, `/floor`, `/dashboard`, `/ape`, `/mutate`, `/stake`, `/xp`, and `/alert`.
+- `dashboard` - Next.js command center with mint status, marketplace health, Discord utility, and generation APIs.
+- `shared` - Helius holder verification, marketplace adapters, formatting helpers, and deterministic ape/mutation generation.
 
-### Discord bot
-
-- `/mint-status` — mint progress tracker
-- `/holder` — Solana NFT holder verification using Helius DAS
-- `/gate` — token-gated role refresh
-- `/floor` — marketplace stats placeholder
-- `/stake`, `/unstake`, `/staking-rewards` — off-chain community staking tracker starter
-- `/generate-ape` — AI image prompt generator starter
-- `/trading-alerts` — educational alerts only; no auto-trading
-- `/dashboard` — dashboard link
-- `/xp`, `/leaderboard`, `/mutate`, `/verify`
-
-### Dashboard
-
-- Next.js starter homepage
-- `/api/stats` starter endpoint
-- `/api/generate-ape` prompt endpoint
-
-## Bot setup
+## Local Setup
 
 ```bash
-cd bot
-cp .env.example .env
 npm install
-npm run deploy-commands
-npm start
+cp .env.example .env
+npm run verify
+npm run register:commands
+npm run start:bot
+npm run dev:dashboard
 ```
 
-Required bot env vars:
+Fill `.env` with real Discord, Helius, collection, dashboard, mint, and marketplace values before running the bot against a live server.
 
-```env
-DISCORD_TOKEN=
-CLIENT_ID=
-GUILD_ID=
-VERIFIED_ROLE_ID=
-WL_ROLE_ID=
-HOLDER_ROLE_ID=
-HELIUS_API_KEY=
-UAS_COLLECTION_ID=
-DASHBOARD_URL=
-```
+## Railway
 
-The bot role must sit above the roles it manages in Discord.
+Create two Railway services from this same GitHub repo:
 
-## Railway deploy
+- Bot service: config file path `/railway/bot.toml`, health check `/healthz`
+- Dashboard service: config file path `/railway/dashboard.toml`, health check `/api/stats`
 
-Deploy the bot service from the `bot/` directory with start command:
+Railway's monorepo config file path is absolute from the repo root, so set the service config paths exactly as shown above. See `railway/README.md` and `docs/PRODUCTION_RAILWAY.md` for the full launch checklist.
 
-```bash
-npm start
-```
+## Discord Bot Launch
 
-Run slash command registration once from your machine or Railway shell:
+1. Create or open the Discord application in the Developer Portal.
+2. Enable the bot with the `applications.commands` and `bot` scopes.
+3. Give the bot permission to manage roles.
+4. Put the bot's managed role above the UAS holder role in Discord role order.
+5. Set `DISCORD_TOKEN`, `DISCORD_CLIENT_ID`, `DISCORD_GUILD_ID`, `DISCORD_HOLDER_ROLE_ID`, `HELIUS_API_KEY`, and either `UAS_COLLECTION_ADDRESS` or `UAS_CREATOR_ADDRESS` in Railway.
+6. Deploy the bot service. Slash commands register on boot when `REGISTER_COMMANDS_ON_START=true`.
 
-```bash
-npm run deploy-commands
-```
-
-## Codex
-
-Open this repo in Codex and ask it to finish marketplace integrations, dashboard polish, and deploy checks. Keep secrets in Railway variables, not GitHub files.
+Secrets belong in Railway variables, not in GitHub files.
