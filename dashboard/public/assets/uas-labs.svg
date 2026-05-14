@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" role="img" aria-labelledby="title desc">
+  <title id="title">UAS Labs artwork</title>
+  <desc id="desc">Neon green laboratory apparatus with UAS markings.</desc>
+  <rect width="1400" height="1000" fill="#08090b"/>
+  <rect x="0" y="0" width="1400" height="1000" fill="#102015"/>
+  <g opacity="0.28">
+    <path d="M1040 150c135 80 190 222 141 351-55 145-205 211-353 168-142-41-225-174-197-315 30-151 255-292 409-204Z" fill="#48c78e"/>
+    <path d="M140 720c157-153 326-178 506-77 65 36 105 91 121 164H140Z" fill="#d6a84c"/>
+  </g>
+  <g fill="none" stroke="#1f3a28" stroke-width="18">
+    <path d="M110 202h420M110 292h360M110 382h420"/>
+    <path d="M930 142h310M930 232h270M930 322h310"/>
+  </g>
+  <g transform="translate(430 90)">
+    <rect x="220" y="28" width="82" height="760" rx="34" fill="#0b0f0d" stroke="#d6a84c" stroke-width="10"/>
+    <path d="M261 82v670" stroke="#65c8d0" stroke-width="13"/>
+    <path d="M164 266c0-64 44-116 99-116s99 52 99 116c0 40-17 75-44 96v75c45 24 76 78 76 141 0 85-58 154-131 154s-131-69-131-154c0-63 31-117 76-141v-75c-27-21-44-56-44-96Z" fill="#11181a" stroke="#48c78e" stroke-width="14"/>
+    <path d="M176 557c32 35 83 50 136 30 26-10 48-25 68-43 10 84-43 150-117 150-68 0-118-56-87-137Z" fill="#48c78e" opacity="0.86"/>
+    <path d="M181 269c43 36 107 32 164-2 0 63-37 109-84 109s-80-43-80-107Z" fill="#48c78e" opacity="0.68"/>
+    <text x="263" y="520" text-anchor="middle" fill="#08090b" font-family="Arial, sans-serif" font-size="64" font-weight="900">UAS</text>
+    <text x="263" y="578" text-anchor="middle" fill="#08090b" font-family="Arial, sans-serif" font-size="52" font-weight="900">LABS</text>
+    <g fill="#f4efe6">
+      <circle cx="218" cy="246" r="10"/>
+      <circle cx="283" cy="225" r="8"/>
+      <circle cx="305" cy="632" r="11"/>
+      <circle cx="235" cy="666" r="7"/>
+      <circle cx="278" cy="607" r="6"/>
+    </g>
+  </g>
+  <g opacity="0.72" fill="#48c78e">
+    <rect x="112" y="626" width="42" height="116" rx="18"/>
+    <rect x="176" y="584" width="42" height="158" rx="18"/>
+    <rect x="240" y="642" width="42" height="100" rx="18"/>
+    <rect x="1130" y="602" width="42" height="140" rx="18"/>
+    <rect x="1198" y="640" width="42" height="102" rx="18"/>
+  </g>
+  <text x="1080" y="830" fill="#f4efe6" font-family="Arial, sans-serif" font-size="82" font-weight="900" opacity="0.18">UAS V2</text>
+</svg>

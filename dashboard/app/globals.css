@@ -1,0 +1,405 @@
+:root {
+  color-scheme: dark;
+  --ink: #f4efe6;
+  --muted: #b8ada0;
+  --panel: rgba(15, 17, 20, 0.88);
+  --panel-strong: rgba(27, 30, 35, 0.95);
+  --line: rgba(244, 239, 230, 0.16);
+  --gold: #d6a84c;
+  --red: #c6433b;
+  --green: #48c78e;
+  --cyan: #65c8d0;
+  --black: #08090b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background:
+    linear-gradient(rgba(8, 9, 11, 0.72), rgba(8, 9, 11, 0.92)),
+    url("/assets/uas-labs.svg") center / cover fixed;
+  color: var(--ink);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+  letter-spacing: 0;
+}
+
+.dashboard-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 40px;
+}
+
+.top-band {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.85fr) minmax(420px, 1.15fr);
+  gap: 18px;
+  align-items: stretch;
+  margin-bottom: 18px;
+}
+
+.brand-line,
+.status-rail,
+.panel,
+.visual-panel {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.34);
+}
+
+.brand-line {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 144px;
+  padding: 22px;
+  border-radius: 8px;
+}
+
+.brand-mark {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  margin: 0;
+  letter-spacing: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+.status-rail {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.status-item {
+  display: grid;
+  align-content: center;
+  gap: 8px;
+  min-height: 144px;
+  padding: 18px;
+  border-left: 1px solid var(--line);
+}
+
+.status-item:first-child {
+  border-left: 0;
+}
+
+.status-item span,
+.detail-row span,
+.command-row span,
+.provider-row small,
+.result-box small {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.status-item strong {
+  font-size: 1.25rem;
+  overflow-wrap: anywhere;
+}
+
+.ops-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 18px;
+}
+
+.panel,
+.visual-panel {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.panel {
+  padding: 20px;
+}
+
+.mint-panel {
+  grid-column: span 4;
+}
+
+.market-panel {
+  grid-column: span 5;
+}
+
+.utility-panel {
+  grid-column: span 3;
+}
+
+.visual-panel {
+  position: relative;
+  grid-column: span 5;
+  min-height: 340px;
+}
+
+.visual-panel > img {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  object-fit: cover;
+  display: block;
+}
+
+.visual-caption {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(8, 9, 11, 0.78);
+  font-weight: 800;
+}
+
+.visual-caption img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.lab-panel {
+  grid-column: span 7;
+}
+
+.panel-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.progress-frame {
+  height: 14px;
+  margin-bottom: 18px;
+  border: 1px solid var(--line);
+  background: rgba(244, 239, 230, 0.08);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--red), var(--gold), var(--green));
+}
+
+.detail-list,
+.command-list,
+.provider-table {
+  border-top: 1px solid var(--line);
+}
+
+.detail-row,
+.command-row,
+.provider-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.detail-row strong,
+.command-row strong,
+.provider-row strong {
+  overflow-wrap: anywhere;
+}
+
+.provider-row span:first-child {
+  display: grid;
+  gap: 4px;
+}
+
+.provider-row:hover {
+  color: var(--cyan);
+}
+
+.warning-line {
+  margin: 16px 0 0;
+  color: #ffd08a;
+}
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel-strong);
+  color: var(--ink);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.button.primary {
+  border-color: rgba(214, 168, 76, 0.72);
+  background: var(--gold);
+  color: var(--black);
+}
+
+.button:disabled {
+  cursor: progress;
+  opacity: 0.7;
+}
+
+.lab-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(260px, 1.2fr);
+  gap: 16px;
+}
+
+.lab-form {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+label {
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 12px;
+  background: rgba(8, 9, 11, 0.72);
+  color: var(--ink);
+}
+
+.result-box {
+  min-height: 148px;
+  border-left: 3px solid var(--red);
+  padding: 0 0 0 14px;
+}
+
+.result-box strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--cyan);
+}
+
+.result-box p {
+  margin: 0 0 10px;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+@media (max-width: 980px) {
+  .top-band,
+  .ops-grid,
+  .lab-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .status-rail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mint-panel,
+  .market-panel,
+  .utility-panel,
+  .visual-panel,
+  .lab-panel {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .dashboard-shell {
+    width: min(100% - 20px, 1180px);
+    padding-top: 10px;
+  }
+
+  .brand-line {
+    align-items: flex-start;
+    min-height: auto;
+  }
+
+  .brand-mark {
+    width: 58px;
+    height: 58px;
+  }
+
+  h1 {
+    font-size: 1.55rem;
+  }
+
+  .status-rail {
+    grid-template-columns: 1fr;
+  }
+
+  .status-item {
+    min-height: 92px;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .status-item:first-child {
+    border-top: 0;
+  }
+
+  .detail-row,
+  .command-row,
+  .provider-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+}

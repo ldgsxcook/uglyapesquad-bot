@@ -1,0 +1,20 @@
+{
+  "name": "@uas-v2/dashboard",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "verify": "node --check next.config.mjs && node --check app/api/stats/route.js && node --check app/api/generate-ape/route.js && node --check app/api/mutate/route.js"
+  },
+  "dependencies": {
+    "next": "^15.3.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "engines": {
+    "node": ">=20.11"
+  }
+}

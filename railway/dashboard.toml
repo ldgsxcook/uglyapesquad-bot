@@ -1,0 +1,10 @@
+[build]
+builder = "NIXPACKS"
+buildCommand = "npm install && npm run build:dashboard"
+
+[deploy]
+startCommand = "npm run start:dashboard"
+healthcheckPath = "/api/stats"
+healthcheckTimeout = 100
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
